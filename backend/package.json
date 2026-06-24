@@ -1,5 +1,11 @@
 {
+  "name": "portfolio-backend",
+  "private": true,
+  "version": "0.0.0",
   "type": "module",
+  "scripts": {
+    "start:dev": "nodemon ./api/server.js"
+  },
   "dependencies": {
     "cloudinary": "^2.8.0",
     "cors": "^2.8.5",
@@ -7,6 +13,7 @@
     "express": "^5.2.1",
     "mongoose": "^9.0.2",
     "multer": "^2.0.2",
+    "multer-storage-cloudinary": "^4.0.0",
     "path": "^0.12.7"
   }
 }

@@ -1,183 +1,372 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import "tailwindcss";
+@config "../../tailwind.config.js";
 
-:root {
-  /* BACKGROUNDS */
-  --bg-page: #f8fafc;
-  /* Slate-50 */
-  --bg-section: #ffffff;
-  /* White */
-  --bg-surface: #f1f5f9;
-  /* Slate-100 */
-  --bg-primary: #e2e8f0;
-  /* Slate-200 */
+@layer base {
+  :root {
+    --bg-page: #f8fafc;
+    --bg-section: #ffffff;
+    --bg-surface: #f1f5f9;
+    --bg-primary: #e2e8f0;
 
-  /* ACCENT BACKGROUNDS (For Contact, Footer, etc.) */
-  --bg-secondary: #4f46e5;
-  /* Indigo-600 */
-  --bg-form: #4338ca;
-  /* Indigo-700 */
-  --bg-input: #3730a3;
-  /* Indigo-800 */
+    --bg-secondary: #4f46e5;
+    --bg-form: #4338ca;
+    --bg-input: #3730a3;
 
-  /* NAVBAR */
-  --bg-navbar: rgba(255, 255, 255, 0.8);
-  --bg-navbar-open: rgba(255, 255, 255, 0.95);
+    --bg-navbar: rgba(255, 255, 255, 0.8);
+    --bg-navbar-open: rgba(255, 255, 255, 0.95);
 
-  /* STATUS */
-  --bg-error: #ef4444;
-  /* Red-500 */
+    --bg-error: #ef4444;
 
-  /* TEXT - STANDARD */
-  --text-primary: #0f172a;
-  /* Slate-900 */
-  --text-secondary: #475569;
-  /* Slate-600 */
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
 
-  /* TEXT - INVERSE (For dark backgrounds in light mode) */
-  --text-inverse-primary: #ffffff;
-  --text-inverse-secondary: #cbd5e1;
-  /* Slate-300 */
+    --text-inverse-primary: #ffffff;
+    --text-inverse-secondary: #cbd5e1;
 
-  /* ACCENT */
-  --accent: #6366f1;
-  /* Indigo-500 */
+    --color-accent: #6366f1;
 
-  /* BORDERS */
-  --border-subtle: rgba(0, 0, 0, 0.08);
-  --border-semibold: rgba(0, 0, 0, 0.15);
-  --border-navbar: rgba(0, 0, 0, 0.1);
-  --border-inverse: rgba(255, 255, 255, 0.2);
+    --border-subtle: rgba(0, 0, 0, 0.08);
+    --border-semibold: rgba(0, 0, 0, 0.15);
+    --border-navbar: rgba(0, 0, 0, 0.1);
+    --border-inverse: rgba(255, 255, 255, 0.2);
 
-  /* COMPONENTS */
-  --chip-bg-primary: #4f46e5;
-  --chip-bg-primary-hover: #4338ca;
-  --chip-text-primary: #ffffff;
+    --chip-bg-primary: #4f46e5;
+    --chip-bg-primary-hover: #4338ca;
+    --chip-text-primary: #ffffff;
 
-  --chip-bg-secondary: #e0e7ff;
-  --chip-bg-secondary-hover: #c7d2fe;
-  --chip-text-secondary: #4338ca;
+    --chip-bg-secondary: #e0e7ff;
+    --chip-bg-secondary-hover: #c7d2fe;
+    --chip-text-secondary: #4338ca;
 
-  --btn-bg-primary: #4f46e5;
-  --btn-bg-primary-hover: #4338ca;
-  --btn-text-primary: #ffffff;
+    --btn-bg-primary: #4f46e5;
+    --btn-bg-primary-hover: #4338ca;
+    --btn-text-primary: #ffffff;
 
-  --btn-bg-secondary: #94a3b8;
-  --btn-bg-secondary-hover: #64748b;
-  --btn-text-secondary: #ffffff;
+    --btn-bg-secondary: #94a3b8;
+    --btn-bg-secondary-hover: #64748b;
+    --btn-text-secondary: #ffffff;
+
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md:
+      0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --shadow-lg:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  }
+
+  .dark {
+    --color-indigo100: #e0e7ff;
+    --color-indigo200: #c7d2fe;
+    --color-indigo900: #312e81;
+
+    --bg-page: #020617;
+    --bg-section: #0f172a;
+    --bg-surface: #1e293b;
+    --bg-primary: #0f172a;
+
+    --bg-secondary: #1e1b4b;
+    --bg-form: #312e81;
+    --bg-input: #3730a3;
+
+    --bg-navbar: rgba(15, 23, 42, 0.7);
+    --bg-navbar-open: rgba(15, 23, 42, 0.95);
+
+    --bg-error: #ef4444;
+
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+
+    --text-inverse-primary: #f8fafc;
+    --text-inverse-secondary: #94a3b8;
+
+    --color-accent: #818cf8;
+
+    --border-subtle: rgba(255, 255, 255, 0.04);
+    --border-semibold: rgba(255, 255, 255, 0.2);
+    --border-navbar: rgba(255, 255, 255, 0.1);
+    --border-inverse: rgba(255, 255, 255, 0.15);
+
+    --chip-bg-primary: var(--color-indigo200);
+    --chip-bg-primary-hover: var(--color-indigo100);
+    --chip-text-primary: var(--color-indigo900);
+
+    --chip-bg-secondary: #334155;
+    --chip-bg-secondary-hover: #475569;
+    --chip-text-secondary: #e2e8f0;
+
+    --btn-bg-primary: var(--color-indigo200);
+    --btn-bg-primary-hover: var(--color-indigo100);
+    --btn-text-primary: var(--color-indigo900);
+
+    --btn-bg-secondary: #334155;
+    --btn-bg-secondary-hover: #475569;
+    --btn-text-secondary: #f8fafc;
+
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+    --shadow-md:
+      0 4px 6px -1px rgba(0, 0, 0, 0.6), 0 2px 4px -2px rgba(0, 0, 0, 0.6);
+    --shadow-lg:
+      0 10px 15px -3px rgba(0, 0, 0, 0.7), 0 4px 6px -4px rgba(0, 0, 0, 0.7);
+  }
+
+  body {
+    @apply font-poppins bg-page text-primary-text;
+  }
 }
 
-.dark {
-  /* DARK MODE REFINEMENTS */
-  --color-indigo100: #e0e7ff;
-  --color-indigo200: #c7d2fe;
-  --color-indigo900: #312e81;
+@layer components {
+  .entered {
+    @apply translate-y-0 opacity-100;
+  }
+  .loading-ring {
+    @apply w-12.5 h-12.5 border-t-[6px] border-solid border-accent rounded-full animate-spin-fast;
+  }
 
-  /* BACKGROUNDS */
-  --bg-page: #020617;
-  /* Slate-950 */
-  --bg-section: #0f172a;
-  /* Slate-900 */
-  --bg-surface: #1e293b;
-  /* Slate-800 */
-  --bg-primary: #0f172a;
-  /* Slate-900 dup for consistency */
+  .loading-text {
+    @apply text-sm font-medium animate-pulse;
+  }
 
-  /* ACCENT BACKGROUNDS (Dark mode versions, slightly desaturated or darker) */
-  --bg-secondary: #1e1b4b;
-  /* Indigo-950 - Deep dark blue for sections */
-  --bg-form: #312e81;
-  /* Indigo-900 */
-  --bg-input: #3730a3;
-  /* Indigo-800 */
+  .animatedItem {
+    @apply col-start-1 row-start-1 flex items-center justify-center text-[0.9em] transition-all duration-500;
+  }
 
-  /* NAVBAR */
-  --bg-navbar: rgba(15, 23, 42, 0.7);
-  --bg-navbar-open: rgba(15, 23, 42, 0.95);
+  .iconColor {
+    @apply text-accent;
+  }
 
-  /* STATUS */
-  --bg-error: #ef4444;
+  .blurOut {
+    filter: blur(8px);
+    transform: scale(0.8) translateY(-10px);
+    @apply opacity-0;
+  }
 
-  /* TEXT - STANDARD */
-  --text-primary: #f8fafc;
-  /* Slate-50 */
-  --text-secondary: #94a3b8;
-  /* Slate-400 */
+  .blurIn {
+    filter: blur(0);
+    transform: scale(1) translateY(0);
+    @apply opacity-100;
+  }
 
-  /* TEXT - INVERSE (On dark mode, this might just be standard text, 
-     but for consistent usage in "colored" sections, we enforce light text if the BG remains dark) */
-  --text-inverse-primary: #f8fafc;
-  --text-inverse-secondary: #94a3b8;
+  .parallaxWrapper {
+    @apply pointer-events-none absolute inset-0 z-1;
+    will-change: transform;
+  }
 
-  /* ACCENT */
-  --accent: #818cf8;
-  /* Indigo-400 */
+  .floatingObj {
+    @apply pointer-events-none absolute z-1 flex items-center justify-center;
+  }
 
-  /* BORDERS */
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-semibold: rgba(255, 255, 255, 0.2);
-  --border-navbar: rgba(255, 255, 255, 0.1);
-  --border-inverse: rgba(255, 255, 255, 0.15);
+  .rocket {
+    top: 15%;
+    right: 15%;
+    font-size: 3.5rem;
+    color: #ff6b6b;
+    transform: rotate(45deg);
+    animation: float 6s ease-in-out infinite alternate;
+  }
+  .star {
+    top: 18%;
+    left: 10%;
+    font-size: 2.5rem;
+    color: #ffd93d;
+    animation:
+      float 8s ease-in-out infinite alternate-reverse,
+      spin 20s linear infinite;
+  }
+  .bolt {
+    bottom: 25%;
+    right: 20%;
+    font-size: 3rem;
+    color: #6c5ce7;
+    animation: float 5s ease-in-out infinite alternate;
+  }
+  .shapes {
+    bottom: 20%;
+    left: 15%;
+    font-size: 4rem;
+    color: var(--color-accent);
+    opacity: 0.3;
+    animation: float 9s ease-in-out infinite alternate-reverse;
+    filter: blur(1px);
+  }
+  .circle1 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, var(--color-accent), transparent 70%);
+    opacity: 0.1;
+    top: -10%;
+    left: -5%;
+    filter: blur(60px);
+    z-index: 0;
+  }
+  .circle2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, var(--bg-secondary), transparent 70%);
+    opacity: 0.15;
+    bottom: -10%;
+    right: -5%;
+    filter: blur(80px);
+    z-index: 0;
+  }
 
-  /* COMPONENTS */
-  --chip-bg-primary: var(--color-indigo200);
-  --chip-bg-primary-hover: var(--color-indigo100);
-  --chip-text-primary: var(--color-indigo900);
+  /* About */
+  .aboutSlide {
+    @apply absolute left-0 top-0 flex h-full w-full items-end justify-start;
+    will-change: transform;
+    box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.5);
+  }
 
-  --chip-bg-secondary: #334155;
-  --chip-bg-secondary-hover: #475569;
-  --chip-text-secondary: #e2e8f0;
+  .overlay {
+    @apply absolute left-0 top-0 h-full w-full;
+    background: linear-gradient(
+      to top,
+      rgba(2, 6, 23, 0.9) 0%,
+      rgba(2, 6, 23, 0.4) 40%,
+      rgba(2, 6, 23, 0.1) 100%
+    );
+    z-index: 1;
+  }
 
-  --btn-bg-primary: var(--color-indigo200);
-  --btn-bg-primary-hover: var(--color-indigo100);
-  --btn-text-primary: var(--color-indigo900);
+  /* Contact */
+  .socialMedia {
+    @apply flex w-full flex-wrap gap-8;
+  }
 
-  --btn-bg-secondary: #334155;
-  --btn-bg-secondary-hover: #475569;
-  --btn-text-secondary: #f8fafc;
+  .socialMedia span {
+    @apply cursor-pointer text-inverse-secondary transition-colors duration-300 hover:text-inverse-primary;
+  }
+
+  .groups {
+    @apply my-2 flex w-full flex-col gap-1 text-inverse-primary;
+  }
+
+  .groups label {
+    @apply text-xs font-normal;
+  }
+
+  .groups input,
+  .groups textarea {
+    @apply rounded-lg border-none bg-input-bg p-3.5 text-inverse-primary outline-none;
+  }
+
+  .groups textarea {
+    @apply h-30 resize-y text-[0.92rem];
+    font-family: "Poppins", sans-serif;
+  }
+
+  .groups input:focus,
+  .groups textarea:focus {
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.5);
+  }
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
+@media (max-width: 768px) {
+  .skillsSection {
+    @apply h-auto;
+  }
+  .skillsSticky {
+    @apply h-auto px-4 py-16;
+  }
+  .skillsDescription {
+    @apply leading-[1.5];
+  }
+  .skillsTrack {
+    @apply flex-wrap justify-center;
+  }
+  .skillCard {
+    @apply min-w-full;
+  }
+  .aboutTitle {
+    @apply text-5xl;
+  }
+  .aboutText {
+    @apply text-[1.1rem];
+  }
+  .heroContent h1 {
+    @apply text-5xl;
+  }
+  .heroActions {
+    @apply gap-4;
+  }
+  .animatedWrapper {
+    @apply w-[0.7em];
+  }
+  .rocket {
+    top: 5%;
+    right: 5%;
+    font-size: 2rem;
+  }
+  .star {
+    top: 10%;
+    left: 5%;
+    font-size: 1.5rem;
+  }
+  .bolt {
+    bottom: 10%;
+    right: 5%;
+    font-size: 2rem;
+  }
+  .shapes {
+    display: none;
+  }
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  background-color: var(--bg-page);
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.containerLoading {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.containerLoading p {
-  font-size: 1rem;
-  margin-top: 24px;
-  color: var(--text-primary);
-}
-
-.loading {
-  width: 50px;
-  height: 50px;
-  border-top: 6px solid var(--accent);
-  border-radius: 700px;
-  animation: spin 0.8s infinite;
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-25px);
+  }
 }
 
 @keyframes spin {
-  0% {
+  from {
     transform: rotate(0deg);
   }
-
-  100% {
+  to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  from {
+    color: rgb(43, 43, 43);
+  }
+  to {
+    color: gray;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
