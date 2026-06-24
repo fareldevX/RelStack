@@ -19,6 +19,4 @@ connectDB();
 app.use("/", archiveRoutes);
 app.use("/contact", contactRoutes);
 
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
-});
+export default app;
