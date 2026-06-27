@@ -113,7 +113,7 @@ function Hero() {
             with correct and modern technologies.
           </p>
 
-          <div className="flex gap-6 opacity-0 animate-[fadeUp_0.8s_ease-out_0.6s_forwards]">
+          <div className="flex flex-col w-full sm:w-auto sm:flex-row gap-6 opacity-0 animate-[fadeUp_0.8s_ease-out_0.6s_forwards]">
             <Button
               variant="primary"
               size="lg"

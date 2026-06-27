@@ -53,7 +53,7 @@ function ArchivesSection() {
     <section id="projects" className="min-h-screen pt-24">
       <Container className="relative flex flex-col items-center justify-center px-4">
         <div className="flex flex-col items-center">
-          <h2 className="text-4xl font-bold text-accent mb-4">
+          <h2 className="text-3xl lg:text-4xl text-center font-bold text-accent mb-4">
             Portfolio Showcase
           </h2>
           <p className="max-w-140 text-center text-base text-secondary-text mb-7">
@@ -89,7 +89,7 @@ function ArchivesSection() {
           </h3>
 
           {filteredArchives.length === 0 ? (
-            <p className="absolute top-40 left-1/2 -translate-x-1/2 text-secondary-text">
+            <p className="absolute top-40 left-1/2 -translate-x-1/2 text-secondary-text text-center w-full">
               {category} not yet available.
             </p>
           ) : (

@@ -12,7 +12,7 @@ dotenv.config();
 
 app.use(
   cors({
-    origin: "https://rel-stack.vercel.app",
+    origin: ["https://rel-stack.vercel.app", "http://localhost:5173"],
     methods: ["GET", "POST", "PUT", "DELETE"],
   }),
 );
