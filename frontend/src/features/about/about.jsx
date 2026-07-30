@@ -1,56 +1,129 @@
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import Section from "@/components/ui/section";
+import Container from "@/components/ui/container";
+import { LuInstagram, LuLinkedin, LuMail } from "react-icons/lu";
+import {
+  SiReact,
+  SiZod,
+  SiReacthookform,
+  SiReactrouter,
+  SiReactquery,
+  SiTypescript,
+  SiJavascript,
+  SiExpress,
+  SiNodedotjs,
+  SiMongodb,
+  SiMongoose,
+  SiHtml5,
+  SiCss,
+  SiTailwindcss,
+  SiGit,
+  SiGithub,
+  SiPostman,
+} from "react-icons/si";
+
+const icons = [
+  SiReact,
+  SiZod,
+  SiReacthookform,
+  SiReactrouter,
+  SiReactquery,
+  SiTypescript,
+  SiJavascript,
+  SiExpress,
+  SiNodedotjs,
+  SiMongodb,
+  SiMongoose,
+  SiHtml5,
+  SiCss,
+  SiTailwindcss,
+  SiGit,
+  SiGithub,
+  SiPostman,
+];
 
 function AboutSection() {
-  const targetRef = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ["start center", "end center"],
-  });
-
-  const paragraph =
-    "I craft immersive digital narratives. My work intentionally shifts away from traditional, rigid corporate structures toward an interactive narrative that feels both professional and experimental.";
-  const words = paragraph.split(" ");
-
   return (
-    <section
-      id="about"
-      className="min-h-[140vh] relative w-full flex items-center justify-center px-6 py-24"
-      ref={targetRef}
-    >
-      <div className="sticky top-1/3 max-w-6xl w-full">
-        <h3 className="text-sm font-semibold uppercase tracking-widest text-zinc-500 mb-6">
-          / About Me
-        </h3>
+    <Section id="about" className="scroll-m-14 sm:scroll-m-20">
+      <Container>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 sm:gap-24">
+          <div className="space-y-8">
+            <div className="space-y-2">
+              <h2 className="text-lg font-semibold text-primary uppercase tracking-wider">
+                About Me
+              </h2>
+              <p className="text-sm text-secondary tracking-wide text-justify">
+                Siswa kompetensi keahlian Teknik Jaringan Komputer yang berfokus
+                sebagai Full-Stack Web Developer. Berpengalaman dalam membangun
+                antarmuka frontend dinamis menggunakan React serta merancang
+                sistem backend berskala besar dengan Express.js dan runtime Bun.
+                Memiliki pemahaman kuat mengenai arsitektur kode yang bersih
+                (clean code) dan pengelolaan infrastruktur Linux Server.
+                Berkomitmen mengaplikasikan keterampilan teknis ini dalam
+                program magang atau posisi entry-level di industri teknologi.
+              </p>
+            </div>
 
-        <p className="text-4xl md:text-6xl font-bold leading-relaxed flex flex-wrap gap-x-3 gap-y-2">
-          {words.map((word, index) => {
-            const start = index / words.length;
-            const end = (index + 1) / words.length;
+            <div className="space-y-2">
+              <h2 className="text-lg font-semibold text-primary uppercase tracking-wider">
+                Education
+              </h2>
 
-            return (
-              <Word key={index} progress={scrollYProgress} range={[start, end]}>
-                {word}
-              </Word>
-            );
-          })}
-        </p>
-      </div>
-    </section>
-  );
-}
+              <div className="flex flex-col min-[480px]:flex-row gap-1 min-[480px]:gap-4 text-sm font-semibold text-primary">
+                <p>2024 - Present</p>
+                <div>
+                  <p>SMK Negeri 1 Adiwerna</p>
+                  <span className="font-normal text-secondary">
+                    Teknik Jaringan dan Komputer
+                  </span>
+                </div>
+              </div>
+            </div>
 
-function Word({ children, progress, range }) {
-  const opacity = useTransform(progress, range, [0.15, 1]);
+            <div className="flex items-center gap-2 mt-6">
+              <a
+                href="#"
+                className="w-10 h-10 flex items-center justify-center bg-accent text-inverse-primary rounded-lg shadow-lg hover:bg-white hover:text-accent hover:-translate-y-2 transition-all duration-600"
+              >
+                <LuInstagram size={22} />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 flex items-center justify-center bg-accent text-inverse-primary rounded-lg shadow-lg hover:bg-white hover:text-accent hover:-translate-y-2 transition-all duration-600"
+              >
+                <LuLinkedin size={22} />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 flex items-center justify-center bg-accent text-inverse-primary rounded-lg shadow-lg hover:bg-white hover:text-accent hover:-translate-y-2 transition-all duration-600"
+              >
+                <LuMail size={22} />
+              </a>
+            </div>
+          </div>
 
-  return (
-    <motion.span
-      style={{ opacity }}
-      className="text-primary select-none transition-colors duration-75"
-    >
-      {children}
-    </motion.span>
+          <div className="space-y-2">
+            <h2 className="text-lg font-semibold text-primary tracking-wider uppercase">
+              Technical Skill
+            </h2>
+
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+              {icons.map((icon, index) => {
+                const Icon = icon;
+
+                return (
+                  <div
+                    key={index}
+                    className="w-14 h-14 flex items-center justify-center bg-accent text-inverse-primary rounded-lg shadow-lg hover:bg-white hover:text-accent hover:-translate-y-2 transition-all duration-600"
+                  >
+                    <Icon size={32} />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </Container>
+    </Section>
   );
 }
 

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@700;800&display=swap");
 @import "tailwindcss";
 @config "../../tailwind.config.js";
 
@@ -24,7 +25,7 @@
     --text-inverse-primary: #ffffff;
     --text-inverse-secondary: #cbd5e1;
 
-    --color-accent: #6366f1;
+    --color-accent: #0f172a;
 
     --border-subtle: rgba(0, 0, 0, 0.08);
     --border-semibold: rgba(0, 0, 0, 0.15);
@@ -76,10 +77,10 @@
     --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
 
-    --text-inverse-primary: #f8fafc;
+    --text-inverse-primary: #0f172a;
     --text-inverse-secondary: #94a3b8;
 
-    --color-accent: #818cf8;
+    --color-accent: #f8fafc;
 
     --border-subtle: rgba(255, 255, 255, 0.04);
     --border-semibold: rgba(255, 255, 255, 0.2);
@@ -155,58 +156,8 @@
     @apply pointer-events-none absolute z-1 flex items-center justify-center;
   }
 
-  .rocket {
-    top: 15%;
-    right: 15%;
-    font-size: 3.5rem;
-    color: #ff6b6b;
-    transform: rotate(45deg);
-    animation: float 6s ease-in-out infinite alternate;
-  }
-  .star {
-    top: 18%;
-    left: 10%;
-    font-size: 2.5rem;
-    color: #ffd93d;
-    animation:
-      float 8s ease-in-out infinite alternate-reverse,
-      spin 20s linear infinite;
-  }
-  .bolt {
-    bottom: 25%;
-    right: 20%;
-    font-size: 3rem;
-    color: #6c5ce7;
-    animation: float 5s ease-in-out infinite alternate;
-  }
-  .shapes {
-    bottom: 20%;
-    left: 15%;
-    font-size: 4rem;
-    color: var(--color-accent);
-    opacity: 0.3;
-    animation: float 9s ease-in-out infinite alternate-reverse;
-    filter: blur(1px);
-  }
-  .circle1 {
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, var(--color-accent), transparent 70%);
-    opacity: 0.1;
-    top: -10%;
-    left: -5%;
-    filter: blur(60px);
-    z-index: 0;
-  }
-  .circle2 {
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, var(--bg-secondary), transparent 70%);
-    opacity: 0.15;
-    bottom: -10%;
-    right: -5%;
-    filter: blur(80px);
-    z-index: 0;
+  .font-portfolio {
+    font-family: "Syne", sans-serif;
   }
 
   /* About */

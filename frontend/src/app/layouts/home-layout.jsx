@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Hero from "../../features/hero/hero";
-import Skills from "../../features/skills/skills";
-import Quote from "../../features/quote/quote";
 import Footer from "../../components/layouts/footer";
 import AboutSection from "../../features/about/about";
 import ContactSection from "../../features/contact/contact";
@@ -39,9 +37,7 @@ function HomePage() {
     <>
       <Hero />
       <AboutSection />
-      <Skills />
       <ArchivesSection />
-      <Quote />
       <ContactSection />
       <Footer />
     </>
