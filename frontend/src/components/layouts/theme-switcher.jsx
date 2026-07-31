@@ -28,7 +28,7 @@ function ThemeSwitcher() {
           {themeItems.map(({ label, mode }) => (
             <button
               key={mode}
-              className="w-full rounded-md border-none bg-transparent p-2 text-left text-sm font-normal text-secondary-text transition-colors duration-200 hover:bg-accent hover:text-inverse-primary cursor-pointer"
+              className="w-full rounded-md border-none bg-transparent p-2 text-left text-sm font-medium text-secondary-text transition-colors duration-200 hover:bg-accent hover:text-inverse-primary cursor-pointer"
               onClick={() => {
                 setTheme(mode);
                 setIsOpen(false);

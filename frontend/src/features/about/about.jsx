@@ -48,10 +48,10 @@ function AboutSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 sm:gap-24">
           <div className="space-y-8">
             <div className="space-y-2">
-              <h2 className="text-lg font-semibold text-primary uppercase tracking-wider">
+              <h2 className="text-lg font-semibold text-primary-text uppercase tracking-wider">
                 About Me
               </h2>
-              <p className="text-sm text-secondary tracking-wide text-justify">
+              <p className="text-sm text-secondary-text leading-relaxed text-justify">
                 Siswa kompetensi keahlian Teknik Jaringan Komputer yang berfokus
                 sebagai Full-Stack Web Developer. Berpengalaman dalam membangun
                 antarmuka frontend dinamis menggunakan React serta merancang
@@ -64,7 +64,7 @@ function AboutSection() {
             </div>
 
             <div className="space-y-2">
-              <h2 className="text-lg font-semibold text-primary uppercase tracking-wider">
+              <h2 className="text-lg font-semibold text-primary-text uppercase tracking-wider">
                 Education
               </h2>
 
@@ -72,7 +72,7 @@ function AboutSection() {
                 <p>2024 - Present</p>
                 <div>
                   <p>SMK Negeri 1 Adiwerna</p>
-                  <span className="font-normal text-secondary">
+                  <span className="font-normal text-secondary-text">
                     Teknik Jaringan dan Komputer
                   </span>
                 </div>
@@ -82,19 +82,19 @@ function AboutSection() {
             <div className="flex items-center gap-2 mt-6">
               <a
                 href="#"
-                className="w-10 h-10 flex items-center justify-center bg-accent text-inverse-primary rounded-lg shadow-lg hover:bg-white hover:text-accent hover:-translate-y-2 transition-all duration-600"
+                className="w-10 h-10 flex items-center justify-center bg-accent dark:bg-slate-900 text-inverse-primary dark:text-accent rounded-lg shadow-lg hover:bg-white dark:hover:bg-accent hover:text-accent dark:hover:text-slate-900 hover:-translate-y-2 transition-all duration-600"
               >
                 <LuInstagram size={22} />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 flex items-center justify-center bg-accent text-inverse-primary rounded-lg shadow-lg hover:bg-white hover:text-accent hover:-translate-y-2 transition-all duration-600"
+                className="w-10 h-10 flex items-center justify-center bg-accent dark:bg-slate-900 text-inverse-primary dark:text-accent rounded-lg shadow-lg hover:bg-white dark:hover:bg-accent hover:text-accent dark:hover:text-slate-900 hover:-translate-y-2 transition-all duration-600"
               >
                 <LuLinkedin size={22} />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 flex items-center justify-center bg-accent text-inverse-primary rounded-lg shadow-lg hover:bg-white hover:text-accent hover:-translate-y-2 transition-all duration-600"
+                className="w-10 h-10 flex items-center justify-center bg-accent dark:bg-slate-900 text-inverse-primary dark:text-accent rounded-lg shadow-lg hover:bg-white dark:hover:bg-accent hover:text-accent dark:hover:text-slate-900 hover:-translate-y-2 transition-all duration-600"
               >
                 <LuMail size={22} />
               </a>
@@ -102,7 +102,7 @@ function AboutSection() {
           </div>
 
           <div className="space-y-2">
-            <h2 className="text-lg font-semibold text-primary tracking-wider uppercase">
+            <h2 className="text-lg font-semibold text-primary-text tracking-wider uppercase">
               Technical Skill
             </h2>
 
@@ -113,7 +113,7 @@ function AboutSection() {
                 return (
                   <div
                     key={index}
-                    className="w-14 h-14 flex items-center justify-center bg-accent text-inverse-primary rounded-lg shadow-lg hover:bg-white hover:text-accent hover:-translate-y-2 transition-all duration-600"
+                    className="w-14 h-14 flex items-center justify-center bg-accent active:bg-white dark:bg-slate-900 dark:active:bg-white text-inverse-primary active:text-accent dark:text-accent dark:active:text-slate-900 rounded-lg shadow-lg hover:bg-white dark:hover:bg-accent hover:text-accent dark:hover:text-slate-900 hover:-translate-y-2 active:-translate-y-2 transition-all duration-600"
                   >
                     <Icon size={32} />
                   </div>

@@ -1,35 +1,62 @@
-import { useState } from "react";
-import { FiArrowRight } from "react-icons/fi";
+import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
+import useClickOutside from "@/hooks/use-click-outside";
+import { LuArrowUpRight } from "react-icons/lu";
 
 function ArchiveCard({ archive }) {
-  const [isTouched, setIsTouched] = useState(false);
+  const [isTilted, setIsTilted] = useState(false);
+  const tiltedRef = useRef(null);
+
+  useClickOutside(tiltedRef, () => setIsTilted(false), isTilted);
 
   return (
-    <div
-      onTouchStart={() => setIsTouched(true)}
-      onTouchEnd={() => setTimeout(() => setIsTouched(false), 3000)}
-      data-touched={isTouched}
-      className="group relative w-full rounded-3xl border border-subtle bg-surface p-2 hover:shadow-xl transition-shadow duration-300 ease overflow-hidden select-none cursor-pointer"
-    >
-      <img
-        src={archive.images[0]}
-        alt={archive.project_name}
-        className="w-full rounded-xl object-cover scale-100 group-hover:scale-105 group-data-[touched=true]:scale-105 transition-transform duration-500 ease"
-      />
-
-      <div className="absolute bottom-0 left-0 right-0 h-0 opacity-0 bg-black/40 group-hover:h-full group-hover:opacity-100 group-data-[touched=true]:h-full group-data-[touched=true]:opacity-100 transition-all duration-500 ease"></div>
-
-      <h3 className="absolute bottom-4 left-4 z-10 translate-y-10 opacity-0 truncate text-[1rem] font-bold text-white group-hover:translate-y-0 group-hover:opacity-100 group-data-[touched=true]:translate-y-0 group-data-[touched=true]:opacity-100 transition-all duration-500 ease">
+    <div className="relative perspective-[1000px] w-full">
+      <h3 className="absolute left-1/2 top-30 sm:top-40 -translate-x-1/2 text-lg font-semibold text-primary-text tracking-tight">
         {archive.project_name}
       </h3>
 
-      <Link
-        to={`/projects/${archive._id}`}
-        className="absolute bottom-2 right-4 z-10 translate-y-10 opacity-0 flex w-max items-center gap-1.5 rounded-full bg-white p-3 text-[0.9rem] font-medium text-black hover:gap-3 group-hover:translate-y-0 group-hover:opacity-100 group-data-[touched=true]:translate-y-0 group-data-[touched=true]:opacity-100 transition-all duration-500 ease"
+      <div
+        ref={tiltedRef}
+        onClick={() => setIsTilted(!isTilted)}
+        className={`group relative flex flex-col justify-between sm:p-5 bg-white/70 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/60 rounded-3xl backdrop-blur-md perspective-[1000px] origin-bottom transition-transform duration-800 ease-out hover:transform-[rotateX(50deg)] ${isTilted ? "max-sm:transform-[rotateX(50deg)]" : ""} shadow-md overflow-hidden z-5`}
       >
-        <FiArrowRight size={16} />
-      </Link>
+        <div className="relative w-full aspect-16/10 flex items-center justify-center p-6 bg-linear-to-br from-slate-200/80 via-slate-100/50 to-slate-200/80  dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 border border-slate-200/50 dark:border-slate-800/40 rounded-2xl overflow-hidden">
+          <div className="absolute w-42 h-42 bg-sky-400/20 blur-3xl rounded-full pointer-events-none group-hover:scale-125 transition-transform duration-700" />
+          <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-indigo-500/15 blur-3xl rounded-full pointer-events-none" />
+
+          <img
+            src={archive.images[0]}
+            alt={archive.project_name}
+            className="relative z-10 max-h-full max-w-full object-contain drop-shadow-xl transition-all duration-500 ease-out group-hover:scale-105 group-hover:-translate-y-1"
+          />
+        </div>
+
+        <div className="max-sm:my-5 sm:mt-5 px-4 sm:px-1 flex flex-col justify-between grow space-y-4">
+          <div className="space-y-2">
+            <h3 className="text-lg font-semibold text-primary-text tracking-tight">
+              {archive.project_name}
+            </h3>
+            <p className="text-sm text-secondary-text line-clamp-3 leading-relaxed">
+              {archive.description}
+            </p>
+          </div>
+
+          <div className="pt-3 flex items-center justify-between border-t border-slate-200/60 dark:border-slate-800/60">
+            <div className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400 font-medium">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block" />
+              {archive.category}
+            </div>
+
+            <Link
+              to={`/archive/${archive._id}`}
+              className="inline-flex items-center gap-1 text-xs sm:text-sm font-semibold text-slate-900 dark:text-slate-200 hover:text-sky-600 dark:hover:text-sky-400 transition-colors duration-200"
+            >
+              <span>View</span>
+              <LuArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
