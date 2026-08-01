@@ -48,7 +48,7 @@ function AboutSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 sm:gap-24">
           <div className="space-y-8">
             <div className="space-y-2">
-              <h2 className="text-lg font-semibold text-primary-text uppercase tracking-wider">
+              <h2 className="text-base sm:text-lg font-semibold text-primary-text uppercase tracking-wider">
                 About Me
               </h2>
               <p className="text-sm text-secondary-text leading-relaxed text-justify">
@@ -64,7 +64,7 @@ function AboutSection() {
             </div>
 
             <div className="space-y-2">
-              <h2 className="text-lg font-semibold text-primary-text uppercase tracking-wider">
+              <h2 className="text-base sm:text-lg font-semibold text-primary-text uppercase tracking-wider">
                 Education
               </h2>
 
@@ -102,7 +102,7 @@ function AboutSection() {
           </div>
 
           <div className="space-y-2">
-            <h2 className="text-lg font-semibold text-primary-text tracking-wider uppercase">
+            <h2 className="text-base sm:text-lg font-semibold text-primary-text tracking-wider uppercase">
               Technical Skill
             </h2>
 
