@@ -1,9 +1,8 @@
 import { useState, useRef } from "react";
-import { Link } from "react-router-dom";
 import useClickOutside from "@/hooks/use-click-outside";
 import { LuArrowUpRight } from "react-icons/lu";
 
-function ArchiveCard({ archive }) {
+function ArchiveCard({ archive, showDetail }) {
   const [isTilted, setIsTilted] = useState(false);
   const tiltedRef = useRef(null);
 
@@ -11,16 +10,16 @@ function ArchiveCard({ archive }) {
 
   return (
     <div className="relative perspective-[1000px] w-full">
-      <h3 className="absolute left-1/2 top-30 sm:top-40 -translate-x-1/2 text-lg font-semibold text-primary-text tracking-tight">
+      <h3 className="absolute left-1/2 top-25 sm:top-40 -translate-x-1/2 text-lg font-semibold text-primary dark:text-surface line-clamp-1 tracking-tight">
         {archive.project_name}
       </h3>
 
       <div
         ref={tiltedRef}
         onClick={() => setIsTilted(!isTilted)}
-        className={`group relative flex flex-col justify-between sm:p-5 bg-white/70 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/60 rounded-3xl backdrop-blur-md perspective-[1000px] origin-bottom transition-transform duration-800 ease-out hover:transform-[rotateX(50deg)] ${isTilted ? "max-sm:transform-[rotateX(50deg)]" : ""} shadow-md overflow-hidden z-5`}
+        className={`group relative flex flex-col justify-between sm:p-5 bg-surface/80 dark:bg-primary/80 border border-color-border/80 dark:border-color-dark-border/60 rounded-3xl backdrop-blur-md perspective-[1000px] origin-bottom transition-transform duration-800 ease-out hover:transform-[rotateX(50deg)] hover:-translate-y-2 ${isTilted ? "max-sm:transform-[rotateX(50deg)] hover:-translate-y-2" : ""} shadow-md overflow-hidden z-5`}
       >
-        <div className="relative w-full aspect-16/10 flex items-center justify-center p-6 bg-linear-to-br from-slate-200/80 via-slate-100/50 to-slate-200/80  dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 border border-slate-200/50 dark:border-slate-800/40 rounded-2xl overflow-hidden">
+        <div className="relative w-full aspect-16/10 flex items-center justify-center p-6 bg-linear-to-br from-slate-200/80 via-slate-100/50 to-slate-200/80 dark:from-slate-950 dark:via-primary dark:to-slate-950 border border-slate-200/50 dark:border-slate-800/40 rounded-2xl overflow-hidden">
           <div className="absolute w-42 h-42 bg-sky-400/20 blur-3xl rounded-full pointer-events-none group-hover:scale-125 transition-transform duration-700" />
           <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-indigo-500/15 blur-3xl rounded-full pointer-events-none" />
 
@@ -33,10 +32,10 @@ function ArchiveCard({ archive }) {
 
         <div className="max-sm:my-5 sm:mt-5 px-4 sm:px-1 flex flex-col justify-between grow space-y-4">
           <div className="space-y-2">
-            <h3 className="text-lg font-semibold text-primary-text tracking-tight">
+            <h3 className="text-lg font-semibold text-primary dark:text-surface tracking-tight">
               {archive.project_name}
             </h3>
-            <p className="text-sm text-secondary-text line-clamp-3 leading-relaxed">
+            <p className="text-sm text-secondary dark:text-secondary-dark line-clamp-3 leading-relaxed">
               {archive.description}
             </p>
           </div>
@@ -47,13 +46,13 @@ function ArchiveCard({ archive }) {
               {archive.category}
             </div>
 
-            <Link
-              to={`/archive/${archive._id}`}
-              className="inline-flex items-center gap-1 text-xs sm:text-sm font-semibold text-slate-900 dark:text-slate-200 hover:text-sky-600 dark:hover:text-sky-400 transition-colors duration-200"
+            <button
+              onClick={() => showDetail(archive._id)}
+              className="inline-flex items-center gap-1 text-xs sm:text-sm font-semibold text-primary dark:text-slate-200 hover:text-accent dark:hover:text-accent transition-colors duration-200 cursor-pointer"
             >
               <span>View</span>
               <LuArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
+            </button>
           </div>
         </div>
       </div>

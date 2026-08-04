@@ -48,31 +48,31 @@ function AboutSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 sm:gap-24">
           <div className="space-y-8">
             <div className="space-y-2">
-              <h2 className="text-base sm:text-lg font-semibold text-primary-text uppercase tracking-wider">
+              <h2 className="text-base sm:text-lg font-semibold text-primary dark:text-surface uppercase tracking-wider">
                 About Me
               </h2>
-              <p className="text-sm text-secondary-text leading-relaxed text-justify">
-                Siswa kompetensi keahlian Teknik Jaringan Komputer yang berfokus
-                sebagai Full-Stack Web Developer. Berpengalaman dalam membangun
-                antarmuka frontend dinamis menggunakan React serta merancang
-                sistem backend berskala besar dengan Express.js dan runtime Bun.
-                Memiliki pemahaman kuat mengenai arsitektur kode yang bersih
-                (clean code) dan pengelolaan infrastruktur Linux Server.
-                Berkomitmen mengaplikasikan keterampilan teknis ini dalam
-                program magang atau posisi entry-level di industri teknologi.
+              <p className="text-sm text-secondary dark:text-secondary-dark leading-relaxed text-justify">
+                A student specializing in Computer Network Engineering focusing
+                as a Full-Stack Web Developer. Experienced in building dynamic
+                frontend interfaces using React and designing large-scale
+                backend systems with Express.js and the Bun runtime. Has a
+                strong understanding of clean code architecture and Linux server
+                infrastructure management. Committed to applying these technical
+                skills in an internship program or entry-level position in the
+                tech industry.
               </p>
             </div>
 
             <div className="space-y-2">
-              <h2 className="text-base sm:text-lg font-semibold text-primary-text uppercase tracking-wider">
+              <h2 className="text-base sm:text-lg font-semibold text-primary dark:text-surface uppercase tracking-wider">
                 Education
               </h2>
 
-              <div className="flex flex-col min-[480px]:flex-row gap-1 min-[480px]:gap-4 text-sm font-semibold text-primary">
+              <div className="flex flex-col min-[480px]:flex-row gap-1 min-[480px]:gap-4 text-sm font-semibold text-primary dark:text-surface">
                 <p>2024 - Present</p>
                 <div>
                   <p>SMK Negeri 1 Adiwerna</p>
-                  <span className="font-normal text-secondary-text">
+                  <span className="font-normal text-secondary dark:text-secondary-dark">
                     Teknik Jaringan dan Komputer
                   </span>
                 </div>
@@ -81,20 +81,26 @@ function AboutSection() {
 
             <div className="flex items-center gap-2 mt-6">
               <a
-                href="#"
-                className="w-10 h-10 flex items-center justify-center bg-accent dark:bg-slate-900 text-inverse-primary dark:text-accent rounded-lg shadow-lg hover:bg-white dark:hover:bg-accent hover:text-accent dark:hover:text-slate-900 hover:-translate-y-2 transition-all duration-600"
+                href="https://www.instagram.com/p4eel11"
+                target="_blank"
+                rel="noreferrer"
+                className="w-10 h-10 flex items-center justify-center bg-surface dark:bg-primary text-primary dark:text-surface rounded-lg shadow-lg hover:bg-primary dark:hover:bg-surface hover:text-surface dark:hover:text-primary hover:-translate-y-2 transition-all duration-500"
               >
                 <LuInstagram size={22} />
               </a>
               <a
-                href="#"
-                className="w-10 h-10 flex items-center justify-center bg-accent dark:bg-slate-900 text-inverse-primary dark:text-accent rounded-lg shadow-lg hover:bg-white dark:hover:bg-accent hover:text-accent dark:hover:text-slate-900 hover:-translate-y-2 transition-all duration-600"
+                href="https://www.linkedin.com/in/farel-arlish-orlando-8a5370399/"
+                target="_blank"
+                rel="noreferrer"
+                className="w-10 h-10 flex items-center justify-center bg-surface dark:bg-primary text-primary dark:text-surface rounded-lg shadow-lg hover:bg-primary dark:hover:bg-surface hover:text-surface dark:hover:text-primary hover:-translate-y-2 transition-all duration-500"
               >
                 <LuLinkedin size={22} />
               </a>
               <a
-                href="#"
-                className="w-10 h-10 flex items-center justify-center bg-accent dark:bg-slate-900 text-inverse-primary dark:text-accent rounded-lg shadow-lg hover:bg-white dark:hover:bg-accent hover:text-accent dark:hover:text-slate-900 hover:-translate-y-2 transition-all duration-600"
+                href="mailto:farelarlishorlandoo@gmail.com"
+                target="_blank"
+                rel="noreferrer"
+                className="w-10 h-10 flex items-center justify-center bg-surface dark:bg-primary text-primary dark:text-surface rounded-lg shadow-lg hover:bg-primary dark:hover:bg-surface hover:text-surface dark:hover:text-primary hover:-translate-y-2 transition-all duration-500"
               >
                 <LuMail size={22} />
               </a>
@@ -102,7 +108,7 @@ function AboutSection() {
           </div>
 
           <div className="space-y-2">
-            <h2 className="text-base sm:text-lg font-semibold text-primary-text tracking-wider uppercase">
+            <h2 className="text-base sm:text-lg font-semibold text-primary dark:text-surface tracking-wider uppercase">
               Technical Skill
             </h2>
 
@@ -113,7 +119,7 @@ function AboutSection() {
                 return (
                   <div
                     key={index}
-                    className="w-14 h-14 flex items-center justify-center bg-accent active:bg-white dark:bg-slate-900 dark:active:bg-white text-inverse-primary active:text-accent dark:text-accent dark:active:text-slate-900 rounded-lg shadow-lg hover:bg-white dark:hover:bg-accent hover:text-accent dark:hover:text-slate-900 hover:-translate-y-2 active:-translate-y-2 transition-all duration-600"
+                    className="w-14 h-14 flex items-center justify-center bg-surface dark:bg-primary text-primary dark:text-surface rounded-lg shadow-lg hover:bg-primary dark:hover:bg-surface hover:text-surface dark:hover:text-primary hover:-translate-y-2 transition-all duration-500"
                   >
                     <Icon size={32} />
                   </div>

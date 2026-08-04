@@ -1,9 +1,8 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Hero from "../../features/hero/hero";
-import Footer from "../../components/layouts/footer";
 import AboutSection from "../../features/about/about";
-import ContactSection from "../../features/contact/contact";
+import MarqueeSection from "@/features/MarqueeSection";
 import ArchivesSection from "../../features/archives/pages/archives";
 import { scrollToSection } from "@/lib/utils/scroll-to-section";
 
@@ -37,9 +36,8 @@ function HomePage() {
     <>
       <Hero />
       <AboutSection />
+      <MarqueeSection />
       <ArchivesSection />
-      <ContactSection />
-      <Footer />
     </>
   );
 }

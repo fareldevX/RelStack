@@ -8,40 +8,18 @@ export default {
         poppins: ["Poppins", "sans-serif"],
       },
       colors: {
-        page: "var(--bg-page)",
-        section: "var(--bg-section)",
-        surface: "var(--bg-surface)",
-        error: "var(--bg-error)",
+        page: "var(--color-page)",
+        "page-dark": "var(--color-page-dark)",
+
+        surface: "var(--color-surface)",
         accent: "var(--color-accent)",
 
-        "secondary-bg": "var(--bg-secondary)",
-        "form-bg": "var(--bg-form)",
-        "input-bg": "var(--bg-input)",
-        "navbar-bg": "var(--bg-navbar)",
-        "navbar-bg-open": "var(--bg-navbar-open)",
+        primary: "var(--color-primary)",
+        secondary: "var(--color-secondary)",
+        "secondary-dark": "var(--color-secondary-dark)",
 
-        "primary-text": "var(--text-primary)",
-        "secondary-text": "var(--text-secondary)",
-        "inverse-primary": "var(--text-inverse-primary)",
-        "inverse-secondary": "var(--text-inverse-secondary)",
-
-        "btn-primary": "var(--btn-bg-primary)",
-        "btn-primary-hover": "var(--btn-bg-primary-hover)",
-
-        "chip-secondary": "var(--chip-bg-secondary)",
-        "chip-secondary-hover": "var(--chip-bg-secondary-hover)",
-        "chip-secondary-text": "var(--chip-text-secondary)",
-      },
-      borderColor: {
-        subtle: "var(--border-subtle)",
-        semibold: "var(--border-semibold)",
-        inverse: "var(--border-inverse)",
-        navbar: "var(--border-navbar)",
-      },
-      boxShadow: {
-        sm: "var(--shadow-sm)",
-        md: "var(--shadow-md)",
-        lg: "var(--shadow-lg)",
+        "color-border": "var(--color-border)",
+        "color-dark-border": "var(--color-border-dark)",
       },
       animation: {
         "spin-fast": "spin 0.8s linear infinite",

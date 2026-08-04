@@ -5,119 +5,29 @@
 
 @layer base {
   :root {
-    --bg-page: #f8fafc;
-    --bg-section: #ffffff;
-    --bg-surface: #f1f5f9;
-    --bg-primary: #e2e8f0;
+    --color-page: #f8fafc;
+    --color-page-dark: #020617;
 
-    --bg-secondary: #4f46e5;
-    --bg-form: #4338ca;
-    --bg-input: #3730a3;
+    --color-surface: #ffffff;
+    --color-accent: #06b6d4;
 
-    --bg-navbar: rgba(255, 255, 255, 0.8);
-    --bg-navbar-open: rgba(255, 255, 255, 0.95);
+    --color-primary: #0f172a;
+    --color-secondary: #4a5565;
+    --color-secondary-dark: #9ca3af;
 
-    --bg-error: #ef4444;
-
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
-
-    --text-inverse-primary: #ffffff;
-    --text-inverse-secondary: #cbd5e1;
-
-    --color-accent: #0f172a;
-
-    --border-subtle: rgba(0, 0, 0, 0.08);
-    --border-semibold: rgba(0, 0, 0, 0.15);
-    --border-navbar: rgba(0, 0, 0, 0.1);
-    --border-inverse: rgba(255, 255, 255, 0.2);
-
-    --chip-bg-primary: #4f46e5;
-    --chip-bg-primary-hover: #4338ca;
-    --chip-text-primary: #ffffff;
-
-    --chip-bg-secondary: #e0e7ff;
-    --chip-bg-secondary-hover: #c7d2fe;
-    --chip-text-secondary: #4338ca;
-
-    --btn-bg-primary: #4f46e5;
-    --btn-bg-primary-hover: #4338ca;
-    --btn-text-primary: #ffffff;
-
-    --btn-bg-secondary: #94a3b8;
-    --btn-bg-secondary-hover: #64748b;
-    --btn-text-secondary: #ffffff;
-
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md:
-      0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-    --shadow-lg:
-      0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-  }
-
-  .dark {
-    --color-indigo100: #e0e7ff;
-    --color-indigo200: #c7d2fe;
-    --color-indigo900: #312e81;
-
-    --bg-page: #020617;
-    --bg-section: #0f172a;
-    --bg-surface: #1e293b;
-    --bg-primary: #0f172a;
-
-    --bg-secondary: #1e1b4b;
-    --bg-form: #312e81;
-    --bg-input: #3730a3;
-
-    --bg-navbar: rgba(15, 23, 42, 0.7);
-    --bg-navbar-open: rgba(15, 23, 42, 0.95);
-
-    --bg-error: #ef4444;
-
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-
-    --text-inverse-primary: #0f172a;
-    --text-inverse-secondary: #94a3b8;
-
-    --color-accent: #f8fafc;
-
-    --border-subtle: rgba(255, 255, 255, 0.04);
-    --border-semibold: rgba(255, 255, 255, 0.2);
-    --border-navbar: rgba(255, 255, 255, 0.1);
-    --border-inverse: rgba(255, 255, 255, 0.15);
-
-    --chip-bg-primary: var(--color-indigo200);
-    --chip-bg-primary-hover: var(--color-indigo100);
-    --chip-text-primary: var(--color-indigo900);
-
-    --chip-bg-secondary: #334155;
-    --chip-bg-secondary-hover: #475569;
-    --chip-text-secondary: #e2e8f0;
-
-    --btn-bg-primary: var(--color-indigo200);
-    --btn-bg-primary-hover: var(--color-indigo100);
-    --btn-text-primary: var(--color-indigo900);
-
-    --btn-bg-secondary: #334155;
-    --btn-bg-secondary-hover: #475569;
-    --btn-text-secondary: #f8fafc;
-
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
-    --shadow-md:
-      0 4px 6px -1px rgba(0, 0, 0, 0.6), 0 2px 4px -2px rgba(0, 0, 0, 0.6);
-    --shadow-lg:
-      0 10px 15px -3px rgba(0, 0, 0, 0.7), 0 4px 6px -4px rgba(0, 0, 0, 0.7);
+    --color-border: #e2e8f0;
+    --color-border-dark: #1e293b;
   }
 
   body {
-    @apply font-poppins bg-page text-primary-text;
+    @apply font-poppins bg-page dark:bg-page-dark text-primary dark:text-surface;
   }
 }
 
-@custom-variant has-hover (@media (hover: hover));
-
 @layer components {
+  .font-portfolio {
+    font-family: "Syne", sans-serif;
+  }
   .entered {
     @apply translate-y-0 opacity-100;
   }
@@ -127,140 +37,6 @@
 
   .loading-text {
     @apply text-sm font-medium animate-pulse;
-  }
-
-  .animatedItem {
-    @apply col-start-1 row-start-1 flex items-center justify-center text-[0.9em] transition-all duration-500;
-  }
-
-  .iconColor {
-    @apply text-accent;
-  }
-
-  .blurOut {
-    filter: blur(8px);
-    transform: scale(0.8) translateY(-10px);
-    @apply opacity-0;
-  }
-
-  .blurIn {
-    filter: blur(0);
-    transform: scale(1) translateY(0);
-    @apply opacity-100;
-  }
-
-  .parallaxWrapper {
-    @apply pointer-events-none absolute inset-0 z-1;
-    will-change: transform;
-  }
-
-  .floatingObj {
-    @apply pointer-events-none absolute z-1 flex items-center justify-center;
-  }
-
-  .font-portfolio {
-    font-family: "Syne", sans-serif;
-  }
-
-  /* About */
-  .aboutSlide {
-    @apply absolute left-0 top-0 flex h-full w-full items-end justify-start;
-    will-change: transform;
-    box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.5);
-  }
-
-  .overlay {
-    @apply absolute left-0 top-0 h-full w-full;
-    background: linear-gradient(
-      to top,
-      rgba(2, 6, 23, 0.9) 0%,
-      rgba(2, 6, 23, 0.4) 40%,
-      rgba(2, 6, 23, 0.1) 100%
-    );
-    z-index: 1;
-  }
-
-  /* Contact */
-  .socialMedia {
-    @apply flex w-full flex-wrap gap-8;
-  }
-
-  .socialMedia span {
-    @apply cursor-pointer text-inverse-secondary transition-colors duration-300 hover:text-inverse-primary;
-  }
-
-  .groups {
-    @apply my-2 flex w-full flex-col gap-1 text-inverse-primary;
-  }
-
-  .groups label {
-    @apply text-xs font-normal;
-  }
-
-  .groups input,
-  .groups textarea {
-    @apply rounded-lg border-none bg-input-bg p-3.5 text-inverse-primary outline-none;
-  }
-
-  .groups textarea {
-    @apply h-30 resize-y text-[0.92rem];
-    font-family: "Poppins", sans-serif;
-  }
-
-  .groups input:focus,
-  .groups textarea:focus {
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.5);
-  }
-}
-
-@media (max-width: 768px) {
-  .skillsSection {
-    @apply h-auto;
-  }
-  .skillsSticky {
-    @apply h-auto px-4 py-16;
-  }
-  .skillsDescription {
-    @apply leading-[1.5];
-  }
-  .skillsTrack {
-    @apply flex-wrap justify-center;
-  }
-  .skillCard {
-    @apply min-w-full;
-  }
-  .aboutTitle {
-    @apply text-5xl;
-  }
-  .aboutText {
-    @apply text-[1.1rem];
-  }
-  .heroContent h1 {
-    @apply text-5xl;
-  }
-  .heroActions {
-    @apply gap-4;
-  }
-  .animatedWrapper {
-    @apply w-[0.7em];
-  }
-  .rocket {
-    top: 5%;
-    right: 5%;
-    font-size: 2rem;
-  }
-  .star {
-    top: 10%;
-    left: 5%;
-    font-size: 1.5rem;
-  }
-  .bolt {
-    bottom: 10%;
-    right: 5%;
-    font-size: 2rem;
-  }
-  .shapes {
-    display: none;
   }
 }
 

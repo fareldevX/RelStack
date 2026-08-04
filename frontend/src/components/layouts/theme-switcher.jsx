@@ -15,7 +15,7 @@ function ThemeSwitcher() {
   return (
     <div ref={wrapperRef} className="relative">
       <button
-        className="flex items-center rounded-full border-none bg-transparent py-1.5 px-2 text-secondary-text cursor-pointer transition-colors duration-300 hover:text-accent"
+        className="flex items-center rounded-full border-none bg-transparent py-1.5 px-2 text-secondary cursor-pointer transition-colors duration-300 hover:text-primary dark:hover:text-surface"
         onClick={() => setIsOpen((prev) => !prev)}
         aria-expanded={isOpen}
         aria-label="Toggle theme"
@@ -24,11 +24,11 @@ function ThemeSwitcher() {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 top-[130%] min-w-30 overflow-hidden rounded-md border border-subtle bg-section p-1 shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
+        <div className="absolute right-0 top-[130%] min-w-30 overflow-hidden rounded-xl border border-color-border/60 dark:border-color-dark-border/60 bg-surface/80 dark:bg-primary/80 p-1 shadow-sm">
           {themeItems.map(({ label, mode }) => (
             <button
               key={mode}
-              className="w-full rounded-md border-none bg-transparent p-2 text-left text-sm font-medium text-secondary-text transition-colors duration-200 hover:bg-accent hover:text-inverse-primary cursor-pointer"
+              className="w-full rounded-md border-none bg-transparent p-2 text-left text-xs font-medium text-secondary transition-colors hover:bg-primary dark:hover:bg-surface hover:text-surface dark:hover:text-primary cursor-pointer"
               onClick={() => {
                 setTheme(mode);
                 setIsOpen(false);
