@@ -25,8 +25,4 @@ app.use("/", archiveRoutes);
 app.use("/", contactRoutes);
 app.use(handleError);
 
-app.listen(3000, () => {
-  console.log("Server running at http://localhost:3000");
-});
-
-// export default app;
+export default app;
