@@ -22,7 +22,11 @@ app.use(express.urlencoded({ extended: true }));
 connectDB();
 
 app.use("/", archiveRoutes);
-app.use("/contact", contactRoutes);
+app.use("/", contactRoutes);
 app.use(handleError);
 
-export default app;
+app.listen(3000, () => {
+  console.log("Server running at http://localhost:3000");
+});
+
+// export default app;

@@ -1,3 +1,5 @@
+import Archives from "../models/Archive.js";
+
 export const getArchives = async (req, res) => {
   try {
     const archives = await Archives.find().sort({ createdAt: -1 });

@@ -1,6 +1,5 @@
 import express from "express";
 import { upload } from "../config/cloudinary.js";
-import Archives from "../models/Archive.js";
 import { getArchives, addArchive } from "../controllers/archive.js";
 
 const router = express.Router();
