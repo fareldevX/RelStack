@@ -4,8 +4,8 @@ import dotenv from "dotenv";
 import { connectDB } from "./config/db.js";
 import archiveRoutes from "./routes/archive.js";
 import contactRoutes from "./routes/contact.js";
+import { handleError } from "./controllers/error.js";
 
-const PORT = process.env.PORT;
 const app = express();
 
 dotenv.config();
@@ -23,5 +23,6 @@ connectDB();
 
 app.use("/", archiveRoutes);
 app.use("/contact", contactRoutes);
+app.use(handleError);
 
 export default app;

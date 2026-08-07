@@ -2,13 +2,22 @@ import { Schema, model } from "mongoose";
 
 const archiveSchema = new Schema(
   {
+    type: {
+      type: String,
+      enum: ["project", "certification"],
+      default: "project",
+    },
     images: { type: [String], default: [] },
-    archive_name: String,
+    name: String,
     description: String,
-    category: String,
     tech_stack: { type: [String], default: [] },
-    github: String,
-    demo: String,
+    demo_url: String,
+    github_url: String,
+    issuer: String,
+    issued_date: Date,
+    expiry_date: Date,
+    credential_id: String,
+    credential_url: String,
   },
   {
     timestamps: true,
