@@ -6,13 +6,16 @@ const archiveSchema = new Schema(
       type: String,
       enum: ["project", "certification"],
       default: "project",
+      required: true,
     },
-    images: { type: [String], default: [] },
-    name: String,
+    name: { type: String, required: true },
     description: String,
+    images: { type: [String], default: [] },
+
     tech_stack: { type: [String], default: [] },
     demo_url: String,
     github_url: String,
+
     issuer: String,
     issued_date: Date,
     expiry_date: Date,
