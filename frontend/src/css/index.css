@@ -32,31 +32,10 @@
     @apply translate-y-0 opacity-100;
   }
   .loading-ring {
-    @apply w-12.5 h-12.5 border-t-[6px] border-solid border-accent rounded-full animate-spin-fast;
+    @apply w-12.5 h-12.5 border-t-[6px] border-solid border-primary dark:border-surface rounded-full animate-spin-fast;
   }
-
   .loading-text {
     @apply text-sm font-medium animate-pulse;
-  }
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-25px);
   }
 }
 
@@ -75,27 +54,5 @@
   }
   to {
     color: gray;
-  }
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }

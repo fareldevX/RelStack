@@ -52,14 +52,18 @@ function AboutSection() {
                 About Me
               </h2>
               <p className="text-sm text-secondary dark:text-secondary-dark leading-relaxed text-justify">
-                A student specializing in Computer Network Engineering focusing
-                as a Full-Stack Web Developer. Experienced in building dynamic
-                frontend interfaces using React and designing large-scale
-                backend systems with Express.js and the Bun runtime. Has a
-                strong understanding of clean code architecture and Linux server
-                infrastructure management. Committed to applying these technical
-                skills in an internship program or entry-level position in the
-                tech industry.
+                Hi, let me introduce myself, I'm{" "}
+                <span className="text-base font-semibold text-primary dark:text-surface">
+                  Farel Arlish Orlando
+                </span>
+                , a student specializing in Computer Network Engineering with a
+                focus as a Full-Stack Web Developer. I have experience building
+                dynamic frontend interfaces using React and designing
+                large-scale backend systems with Express.js and the Bun runtime.
+                I have a strong understanding of clean code architecture and
+                Linux server infrastructure management. I'm committed to
+                applying these technical skills in an internship program or
+                entry-level position in the tech industry.
               </p>
             </div>
 
@@ -73,7 +77,7 @@ function AboutSection() {
                 <div>
                   <p>SMK Negeri 1 Adiwerna</p>
                   <span className="font-normal text-secondary dark:text-secondary-dark">
-                    Teknik Jaringan dan Komputer
+                    Network and Computer Engineering
                   </span>
                 </div>
               </div>

@@ -1,8 +1,15 @@
+import { Link, useNavigate } from "react-router-dom";
 import Container from "../ui/container";
 import { LuInstagram, LuLinkedin, LuMail } from "react-icons/lu";
 import { FiSend } from "react-icons/fi";
 
 function Footer() {
+  const navigate = useNavigate();
+
+  const handleContactClick = () => {
+    navigate("/contact", { replace: false });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
     <footer className="pt-18 mt-18">
       <Container>
@@ -19,10 +26,9 @@ function Footer() {
             </p>
           </div>
 
-          <a
-            href="mailto:farelarlishorlandoo@gmail.com?subject=Project%20Inquiry"
-            target="_blank"
-            rel="noreferrer"
+          <button
+            type="button"
+            onClick={handleContactClick}
             className="group inline-flex gap-2 text-sm font-medium py-3 px-6 bg-primary text-surface border border-color-dark-border/80 rounded-md hover:bg-primary/90 transition-colors cursor-pointer"
           >
             Let's get in touch
@@ -30,7 +36,7 @@ function Footer() {
               size={18}
               className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
             />
-          </a>
+          </button>
         </div>
 
         <div className="flex flex-col max-sm:gap-2 sm:flex-row items-center justify-center sm:justify-between py-6 mt-14 border-t border-slate-200/60 dark:border-slate-900/60">

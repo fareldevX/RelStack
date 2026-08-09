@@ -11,7 +11,7 @@ function ArchiveCard({ archive, showDetail }) {
   return (
     <div className="relative perspective-[1000px] w-full">
       <h3 className="absolute left-1/2 top-25 sm:top-40 -translate-x-1/2 text-lg font-semibold text-primary dark:text-surface line-clamp-1 tracking-tight">
-        {archive.project_name}
+        {archive.name}
       </h3>
 
       <div
@@ -25,7 +25,7 @@ function ArchiveCard({ archive, showDetail }) {
 
           <img
             src={archive.images[0]}
-            alt={archive.project_name}
+            alt={archive.name}
             className="relative z-10 max-h-full max-w-full object-contain drop-shadow-xl transition-all duration-500 ease-out group-hover:scale-105 group-hover:-translate-y-1"
           />
         </div>
@@ -33,7 +33,7 @@ function ArchiveCard({ archive, showDetail }) {
         <div className="max-sm:my-5 sm:mt-5 px-4 sm:px-1 flex flex-col justify-between grow space-y-4">
           <div className="space-y-2">
             <h3 className="text-lg font-semibold text-primary dark:text-surface tracking-tight">
-              {archive.project_name}
+              {archive.name}
             </h3>
             <p className="text-sm text-secondary dark:text-secondary-dark line-clamp-3 leading-relaxed">
               {archive.description}
@@ -43,7 +43,7 @@ function ArchiveCard({ archive, showDetail }) {
           <div className="pt-3 flex items-center justify-between border-t border-slate-200/60 dark:border-slate-800/60">
             <div className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400 font-medium">
               <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block" />
-              {archive.category}
+              {archive.type}
             </div>
 
             <button
