@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Hero from "../../features/hero/hero";
 import AboutSection from "../../features/about/about";
+import ExperienceSection from "../../features/experience/experience";
 import MarqueeSection from "@/features/MarqueeSection";
 import ArchivesSection from "../../features/archives/pages/archives";
 import { scrollToSection } from "@/lib/utils/scroll-to-section";
@@ -36,6 +37,7 @@ function HomePage() {
     <>
       <Hero />
       <AboutSection />
+      <ExperienceSection />
       <MarqueeSection />
       <ArchivesSection />
     </>
