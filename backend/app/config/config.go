@@ -8,12 +8,12 @@ import (
 )
 
 type Config struct {
-	AppPort             string
-	AppName             string
-	FrontendURL         string
-	MongoURI            string
+	AppPort string
+	AppName string
+	FrontendURL string
+	MongoURI string
 	CloudinaryCloudName string
-	CloudinaryApiKey    string
+	CloudinaryApiKey string
 	CloudinaryApiSecret string
 }
 
@@ -23,13 +23,13 @@ func LoadConfig() *Config {
 	}
 
 	return &Config{
-		AppPort:             getEnv("APP_PORT", "8080"),
-		AppName:             getEnv("APP_NAME", "Portfolio Backend"),
-		FrontendURL:         getEnv("FRONTEND_URL", "https://rel-stack.vercel.app"),
+		AppPort: getEnv("APP_PORT", "8080"),
+		AppName: getEnv("APP_NAME", "Portfolio Backend"),
+		FrontendURL: getEnv("FRONTEND_URL", "https://rel-stack.vercel.app"),
 
-		MongoURI:            getEnv("MONGO_URI", ""),
+		MongoURI: getEnv("MONGO_URI", ""),
 		CloudinaryCloudName: getEnv("CLOUDINARY_CLOUD_NAME", ""),
-		CloudinaryApiKey:    getEnv("CLOUDINARY_API_KEY", ""),
+		CloudinaryApiKey: getEnv("CLOUDINARY_API_KEY", ""),
 		CloudinaryApiSecret: getEnv("CLOUDINARY_API_SECRET", ""),
 	}
 }

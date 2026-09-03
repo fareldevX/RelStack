@@ -1,7 +1,6 @@
 package handler
 
 import (
-	"context"
 	"log"
 	"net/http"
 	"sync"
@@ -32,11 +31,6 @@ func initApp() {
 	if err != nil {
 		log.Fatalf("Fatal: %v", err)
 	}
-	defer func() {
-		if disErr := client.Disconnect(context.Background()); disErr != nil {
-			log.Printf("Error disconnect mongo: %v", disErr)
-		}
-	}()
 	db := client.Database("Dashboard")
 
 	cld, err := cloudinary.NewFromParams(
@@ -57,7 +51,7 @@ func initApp() {
 	contactSvc := service.NewContactService(contactRepo)
 	contactHandler := handler.NewContactHandler(contactSvc)
 
-	app := fiber.New(fiber.Config{
+	app = fiber.New(fiber.Config{
 		AppName: cfg.AppName,
 		BodyLimit: 4 * 1024 * 1024,
 	})
