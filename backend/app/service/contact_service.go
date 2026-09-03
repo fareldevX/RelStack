@@ -3,8 +3,8 @@ package service
 import (
 	"context"
 
-	"portfolio-backend/internal/domain"
-	"portfolio-backend/internal/repository"
+	"portfolio-backend/app/domain"
+	"portfolio-backend/app/repository"
 )
 
 type ContactService interface {

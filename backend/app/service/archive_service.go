@@ -6,9 +6,9 @@ import (
 	"mime/multipart"
 	"time"
 
-	"portfolio-backend/internal/domain"
-	"portfolio-backend/internal/repository"
-	"portfolio-backend/internal/utils"
+	"portfolio-backend/app/domain"
+	"portfolio-backend/app/repository"
+	"portfolio-backend/app/utils"
 
 	"go.mongodb.org/mongo-driver/v2/bson"
 )

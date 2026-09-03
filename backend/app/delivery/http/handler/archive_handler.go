@@ -5,9 +5,9 @@ import (
 	"errors"
 	"log"
 
-	"portfolio-backend/internal/domain"
-	"portfolio-backend/internal/service"
-	"portfolio-backend/internal/utils"
+	"portfolio-backend/app/domain"
+	"portfolio-backend/app/service"
+	"portfolio-backend/app/utils"
 
 	"github.com/go-playground/validator/v10"
 	"github.com/gofiber/fiber/v2"

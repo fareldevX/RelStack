@@ -3,8 +3,8 @@ package handler
 import (
 	"log"
 
-	"portfolio-backend/internal/domain"
-	"portfolio-backend/internal/service"
+	"portfolio-backend/app/domain"
+	"portfolio-backend/app/service"
 
 	"github.com/go-playground/validator/v10"
 	"github.com/gofiber/fiber/v2"

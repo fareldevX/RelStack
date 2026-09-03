@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"portfolio-backend/internal/domain"
+	"portfolio-backend/app/domain"
 
 	"go.mongodb.org/mongo-driver/v2/bson"
 	"go.mongodb.org/mongo-driver/v2/mongo"

@@ -6,10 +6,10 @@ import (
 	"net/http"
 	"sync"
 
-	"portfolio-backend/internal/config"
-	"portfolio-backend/internal/delivery/http/handler"
-	"portfolio-backend/internal/repository"
-	"portfolio-backend/internal/service"
+	"portfolio-backend/app/config"
+	"portfolio-backend/app/delivery/http/handler"
+	"portfolio-backend/app/repository"
+	"portfolio-backend/app/service"
 	"portfolio-backend/pkg/database"
 
 	"github.com/cloudinary/cloudinary-go/v2"
