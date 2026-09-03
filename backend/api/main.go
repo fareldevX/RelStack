@@ -1,24 +1,31 @@
-package main
+package handler
 
 import (
 	"context"
-	"fmt"
 	"log"
+	"net/http"
+	"sync"
 
 	"portfolio-backend/internal/config"
-	"portfolio-backend/internal/delivery/http"
+	"portfolio-backend/internal/delivery/http/handler"
 	"portfolio-backend/internal/repository"
 	"portfolio-backend/internal/service"
 	"portfolio-backend/pkg/database"
 
 	"github.com/cloudinary/cloudinary-go/v2"
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/adaptor"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/gofiber/fiber/v2/middleware/recover"
 )
 
-func main() {
+var (
+	app *fiber.App
+	once sync.Once
+)
+
+func initApp() {
 	cfg := config.LoadConfig()
 
 	client, err := database.NewMongoClient(cfg.MongoURI)
@@ -44,11 +51,11 @@ func main() {
 	archiveRepo := repository.NewArchiveRepository(db)
 	cloudinaryRepo := repository.NewCloudinaryRepository(cld)
 	archiveSvc := service.NewArchiveService(archiveRepo, cloudinaryRepo)
-	archiveHandler := http.NewArchiveHandler(archiveSvc)
+	archiveHandler := handler.NewArchiveHandler(archiveSvc)
 
 	contactRepo := repository.NewContactRepository(db)
 	contactSvc := service.NewContactService(contactRepo)
-	contactHandler := http.NewContactHandler(contactSvc)
+	contactHandler := handler.NewContactHandler(contactSvc)
 
 	app := fiber.New(fiber.Config{
 		AppName: cfg.AppName,
@@ -71,10 +78,12 @@ func main() {
 	api.Delete("/archive/:id", archiveHandler.DeleteArchive)
 
 	api.Post("/contact", contactHandler.AddMessage)
+}
 
-	addr := fmt.Sprintf(":%s", cfg.AppPort)
-	log.Printf("Server is running at port %s", cfg.AppPort)
-	if err := app.Listen(addr); err != nil {
-		log.Fatalf("Failed to start server: %v", err)
-	}
+func Handler(w http.ResponseWriter, r *http.Request) {
+	once.Do(func() {
+		initApp()
+	})
+
+	adaptor.FiberApp(app)(w, r)
 }
