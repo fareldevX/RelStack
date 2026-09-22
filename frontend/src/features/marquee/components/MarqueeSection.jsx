@@ -1,4 +1,4 @@
-import Section from "@/components/ui/Section";
+import Section from "@/components/ui/section";
 import Marquee from "react-fast-marquee";
 import { LuSparkles } from "react-icons/lu";
 

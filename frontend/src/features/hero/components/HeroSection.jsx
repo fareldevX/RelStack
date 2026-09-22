@@ -1,4 +1,4 @@
-import Section from "@/components/ui/Section";
+import Section from "@/components/ui/section";
 import Container from "@/components/ui/container";
 import HeroOverlay from "./HeroOverlay";
 import HeroContent from "./HeroContent";

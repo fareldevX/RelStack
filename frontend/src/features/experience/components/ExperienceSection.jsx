@@ -1,4 +1,4 @@
-import Section from "@/components/ui/Section";
+import Section from "@/components/ui/section";
 import Container from "@/components/ui/container";
 import ExperienceHeader from "./ExperienceHeader";
 import ExperienceContent from "./ExperienceContent";
