@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Container from "../ui/Container";
 import { LuInstagram, LuLinkedin, LuMail } from "react-icons/lu";
 import { FiSend } from "react-icons/fi";
