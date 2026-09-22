@@ -2,7 +2,7 @@ import { archivesStore } from "@/stores/archivesStore";
 import { useArchiveDetail } from "../hooks/useArchiveDetail";
 import useArchives from "../hooks/useArchives";
 import Section from "@/components/ui/Section";
-import Container from "@/components/ui/Container";
+import Container from "@/components/ui/container";
 import ArchiveHeader from "./ArchiveHeader";
 import ArchiveList from "./ArchiveList";
 import ArchiveDetail from "./ArchiveDetail/ArchiveDetail";

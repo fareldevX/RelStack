@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { scrollTop } from "../utils/contactHelpers";
 import Section from "@/components/ui/Section";
-import Container from "@/components/ui/Container";
+import Container from "@/components/ui/container";
 import ContactHeader from "./ContactHeader";
 import ContactForm from "./ContactForm";
 import ContactFooter from "./ContactFooter";

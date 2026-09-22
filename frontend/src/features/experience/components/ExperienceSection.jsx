@@ -1,5 +1,5 @@
 import Section from "@/components/ui/Section";
-import Container from "@/components/ui/Container";
+import Container from "@/components/ui/container";
 import ExperienceHeader from "./ExperienceHeader";
 import ExperienceContent from "./ExperienceContent";
 
